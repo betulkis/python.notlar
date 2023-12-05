@@ -1,0 +1,1293 @@
+ALGORİTMA/DEĞİŞKENLER
+
+Kaba Kod(Pseudo code) normalde çalışmaz bilg. ve konuşma diline yakındır
+
+örn input(sayi1,sayi2) giriş alınır 
+
+Bilgisayarların işlemcisinde, hafıza kartında transistör kullanılmıştır.
+elektriği geçirince 1(high)geçirmediğinde 0(low) verisi oluştururlar.
+makine dili 0 1 
+
+derleyici compiler
+yorumlayıcı interpreter
+
+kaynak program source code
+ 
+herhangi bir yazılımın işlenip makine diline çevrilmeden önce okunup üzerinde çalışılabilen programlama diliyle yazılmış hâlidir
+c dilinde yazıldıysa .c
+assembly .asm
+java .java
+python .py
+
+editör
+
+kaynak kodu düzenleyicisi, bilgisayar programının kaynak kodunu düzenlemek için özel olarak tasarlanmış metin düzenleyici programıdır.
+
+python editörleri
+atom
+IDLE 
+sublime text 
+visual studio code...
+
+Executable file(çalıştırılabilir dosya)
+bir programlama dilinde yazılmış kaynak programın derlenmesi ile elde edilen makine diline dönüştürülmüş ve çalışmaya hazır programa denir. Dosya uzantısı .exe dir
+python .py uzantısını .exe uzantısına çevirmek için PyInstaller , py2exe programlarını kullanabilirsin.
+
+python yüksek seviyeli dildir insan diline yakın
+------------------------------
+options show line numbers aç
+
+print("BTK")
+for a in range(5):
+    print("python")
+
+çıktısı
+BTK
+python
+python
+python
+python
+python
+
+
+= (atama operatörü)
+A = 8
+print (A)
+tırnak kullanma A değişken
+kaydet run dediğinde 8 yazar
+
+A = 8
+B = 2
+print (A+B)
+veya 
+TOPLAM = A+B  toplamı tanımladı
+print (TOPLAM)
+
+A=B
+print (A)  
+B nin değeri A ya atanır A artık 2
+
+A=B =0
+ikisi de 0
+pythonda boşluklar önemli değil
+
+Değişken isimlendirme kuralları:
+
+*Bir değişken isminin ilk karakteri harf ya da alt çizgi olmalı
+sayı ile vs  başlamaz
+
+*Değişken ismi içerisinde _ hariç boşluk veya diğer özel karakterler bulunmaz
+örn . , + ? olmaz
+
+*Değişken ismi bir python komutu olamaz bunlara keyword denir
+bu komutları şu şekilde öğrenebiliriz:
+
+import keyword
+keyword.kwlist
+
+python kodları çıktı olarak verilir
+
+*tr karakter kullanma
+
+*Büyük harf küçük harf farklıdır önemli
+
+
+A=1
+B=2
+A,B=B,A #İki değişkenin birbirine aktarılması
+B=1 OLUR
+
+K='BTK'
+Y='AKADEMİ'
+K,Y=Y,K
+print(K)
+AKADEMİ
+
+
+Toplam=0 #Başlangıç değeri atama
+A=45
+B=35
+Toplam=A+B
+print (Toplam)
+80
+
+
+% kalan
+/ bölme
+// tam sayı bölme(virgülden sonrası gözükmez)
+** üs alma
+3**2  9 dur
+
+A=9
+B=15
+print (A,'+',B,'=',A+B)
+9 + 15 = 24
+#bu şekilde çıkarma bölme tek tek tanımlanabilir
+
+Cep=0
+Cep=Cep+10
+ile
+Cep+=10
+aynıdır
+
+Cep=10 
+Cep/=2  # Cep=Cep/2
+print(Cep)
+5.0  
+Cep//=2  deseydik direkt 5 çıkardı
+
+
+# diyez işareti pythonda açıklama satırıdır
+
+int tam sayı
+float ondalıklı sayı veri tipi 3.0
+bool doğru yanlış
+str KARAKTER VERİ TİPİ (string)+ operatörüyle birleştirilebilirler
+
+VERİ TİPİ ÖĞRENME
+type(A)
+
+ ==(karşılaştırma operatörü)
+
+print(3==3)
+True
+3 3 e eşit midir
+
+
+VERİ TİPİ DÖNÜŞTÜRME
+
+Float kesirli sayıyı int dönüştür
+
+(int) (9.6)
+9
+
+float(9)
+9.6
+
+str(9)
+'9'
+
+str(9)+str(9)
+'99'
+
+str yani karaktere dönüştürdüğümüz için 9ları yanyana yazdı toplamadı 
+
+X=Y=Z= "BTK"
+type(X)
+< class 'str' >
+
+x y x ye aynı satırda atama yaptık sonra x in veri tipini sorguladık
+
+
+import keyword
+keyword.kwlist
+
+değişken ismi olarak tanımlayamayacağımız keywordleri veren kod 
+
+B=40
+C=str(B)+'5'
+print (C)
+405
+type(C) # c değişkeni öğrenmek için bu işlem yapılır
+< class 'str' >
+
+40 ile 5 toplanmaz 40 type ı str toplayınca da 5 ile yan yana yazılır
+-------------------------------------------------------------------------------
+VERİ İŞLEMLERİ
+
+input fonksiyonu varsayılan olarak str tipinde veri alır.
+
+input()
+str veri tipinde değer alır 
+klavyeden 25 sayısını yazsak enter dediğimide
+'25' şeklinde yazı olur
+------------------------------yas=int(input("yaşınız.:"))    !!
+
+önceden klavyeden girilen stringi int e dönüştürmemiz gerekiyor !!
+--------------------------------
+
+isim=input("isminiz.:")
+
+isim değişkenini klavyeden girerek alacağız
+
+klavyeden talat girildiğinde çıktı
+
+isminiz.:talat
+
+print("isim:" , isim) 
+2.kısım değişken ilk tırnak olan kısım direkt yazdırılacak
+isim:talat
+
+-------------------------------
+sep: çıktı mesajındaki karakterler arasına ayraç koymak için kullanılır.
+
+print ('b','t','k',sep=',')
+b,t,k
+sep boşluklara , koymaya yaradı
+sep='*' olsaydı da aralara * olurdu
+
+-----------------------------
+print("btk"*3)
+btkbtkbtk
+btk string değer olduğu için
+
+----------------------------
+print ("yaşınız?" , end=(' '))
+yas = input()
+
+end yazmasaydık
+yaşınız?
+32 olacaktı
+
+end inputun alt satıra geçmesini engeller
+
+end=('..') yazsaydık alt satıra geçmeyip input öncesine ..da ekler
+
+yaşınız?..32
+------------------------
+\n   ters slash ve n 
+alt satıra geçiyor
+
+print("btk\nAkademi")
+btk
+Akademi
+--------------------------
+\t
+arada 1 tab boşluk bırakmak için
+
+print("btk\tAkademi")
+btk    Akademi
+---------------------------
+!!!
+print("\")
+syntaxerror verir
+ters slash yazdırmak için print içine 2 tane yazmalısın
+print("\\") şeklinde
+çıktı
+\
+----------------------------
+format ()  !!!
+
+A=5
+print('A.:',A)
+A.: 5
+
+print ("a={0}".format (A))
+a=5
+
+print (f"A={A}")
+A=5
+
+print('A='+str(A))
+A=5
+
+bu 4 kodda aynı şeyi üretiyor
+
+-------------------------------
+crtl s kaydet
+f5 run
+-------------------------------
+çizim
+  ___ 
+ /* *\
+  \./
+
+print("  ___ \n /* *\\\n  \./")
+
+-----------------------------
+print("ab\\c")
+çıktısı
+ab\c
+
+2 tane ters slashta kurala göre 1 tanesi okunmaz 
+1 tane taksim işareti için kodda 2 tane yazılmalı
+-----------------------------------------------------------------------------------
+KOŞUL VE KARŞILAŞTIRMA
+
+if : tek şart ifadesi
+
+if else : çift şart 
+
+if elif else : çoklu koşula bağlı işlemler için
+-------------------------
+karşılaştırma operatörlerinden bazıları
+== eşittir
+!= eşit değildir
+>= büyük eşittir
+
+mantıksal operatörler
+and 
+or
+not
+---------------------------
+if komutu
+
+: unutma
+
+if 5==5:
+   print("eşittir")
+--------------------------
+if else komutu
+
+a=25
+b=int(input("sayıyı tahmin et "))   # input str tipinde olduğu için int e çevirdik 
+if a==b:
+   print("doğru bildin")
+else:
+    print("tekrar dene")
+
+koşullar bittikten sonra : unutma
+-------------------------------------------------------------------------------------
+DÖNGÜLER LOOPS
+
+for : döngü sayısı önceden bellidir
+
+while : döngü sayısı önceden belli olmayıp koşula bağlıdır
+
+liste : sıralı eleman dizisi
+köşeli parantez kullanılır
+string değerlerden oluşabilir
+sayısal değerlerden de oluşabilir
+
+liste=['ali','can','miray']
+print (liste)
+
+çıktı
+['ali','can','miray']
+
+liste2=[1,2,3,4]
+print (liste2)
+
+çıktı
+[1,2,3,4] 
+-------------------------------
+in ve not in operatörleri
+
+liste içerisinde bir elemanın olup olmadığını belirtmek için in veya not in kullanılır
+
+
+liste=['ali','can','miray']
+print (liste)
+print ('ali' in liste) # ali listede varsa true yoksa false gösterir
+
+çıktıda
+listeyi yazdırır ve true döndürür
+['ali','can','miray']
+True
+
+not in (yoksa)
+-------------------------------
+range () fonksiyonu
+
+
+parantezde 2.yazdığımız dâhil değil
+
+range (0,5)  # 0 1 2 3 4 değeri oluşturur
+çıktı
+range(0,5)
+
+range(6)
+range(0,6)  # 0 1 2 3 4 5 
+
+range(11, 5)  # 11 10 9 8 7 6
+
+
+range (1,10,2) # 1den 10a kadar 2şer 2şer gitsin demek
+1 3 5 7 9
+geri geri de gidebilir
+
+range(15,3,-4)
+ 
+
+for a in range(0,5) : #for döngüsünden sonra : koy
+    print  (a)
+çıktı
+0
+1
+2
+3
+4
+
+for a int [0,1,2,3,4]:
+    print(a)
+0
+1
+2
+3
+4
+ 
+list (range(0,5))
+çıktı
+[0,1,2,3,4]
+--------------------------------
+X=1
+print ("çıkış için sıfıra bas")
+while (X!=0):
+    X= int (input("sayı giriniz..:"))
+    print ("Sayının Karesi=", X*X)
+print("güle güle")
+-------------------------------
+while True : sonsuz döngü
+break : döngüden çıkmaya yarar
+
+print ("çıkmak için 0 girin")
+while True:
+     D=int (input("bir sayı girin"))
+     print ("karesi=", D*D)
+     if(D==0):
+         break # döngüden çık
+
+-----------------------------
+continue
+
+7 ve katları hariç 0dan 100e sayıları yazdıran program
+
+for A in range(100):
+    if (A%7==0):
+        continue
+    print (A)
+
+
+% mod  -> 7 ile bölümünde kalan 0 ise değişken 7 ve katlarıysa 
+------------------------------
+çoklu döngüler
+
+for A in range(1,11):
+   for B in range(1,11):
+       print (A, "*", B, "="A*B)
+   print ("\n")
+----------------------------------------------------------------------------------
+FONKSİYONLAR 
+
+def : komutu fonksiyon tanımlamak için kullanılır
+
+def toplama():
+'def toplama():'
+
+ örn
+
+def topla():
+    print("toplama iki veya daha fazla sayının toplanmasıdır")
+   run deyip topla() yazdığımızda
+print içindeki ifadeyi verir.sadece fonksiyonu yazarak içerisindeki kodları yazdırırız
+-------------------------------
+
+def selamlama(isim="talat"):
+    print(isim , "hoşgeldin")
+
+selamlama()
+varsayılan olarak talat hoşgeldin der
+
+selamlama ("isa") dersek
+artık isa hoşgeldin der  !!
+-----------------------------
+dikd. alan/çevre hesaplama
+
+return
+
+
+def alan(u,g):
+    A=u*g
+    return A  # A döndür
+def cevre(u,g):
+    C=2*(u+g)
+    return C
+
+# tanımlamaları yaptık şimdi ana programı yazalım u ve g değişkenlerini kullanıcıdan al int veri tipinde
+
+u=int(input("dikd uzun kenarını gir:"))
+g=int(input("dikd kısa kenarını gir:"))
+
+# sonra dikd alanını ve çevresini yazdıracağız fonksiyonları kullanarak
+
+print ("dikd alanı=" , alan(u,g))
+
+print ("dikd çevresi=" , cevre(u,g))
+
+--------------------------------
+yerel (lokal)
+genel global değişken
+
+
+def topla (): 
+     a=5 
+     b=6
+     return (a+b)
+print(topla())
+print(a)
+
+çıktıda print(a) komutu gerçekleşmez hata verir çünkü a değişkeni yerel fonksiyon.
+fonksiyon dışında a tanımlı değil
+
+ya a yı return dan sonra ana programa geçmeden tanımlayacaksın 
+
+ya da fonksiyonun içine a ve b değerlerinden önce global  a yazacaksın
+
+fonksiyonun içinde global a
+yazarak a yı lokallikten çıkaracaksın
+
+! değişkeni tanımladığım yerde atama yapamıyorsun
+yani
+global a=5 olmaz
+--------------------------------
+içeriği olmayan fonksiyon tanımlama
+
+daha sonra içini dolduracağımız şeylere none çıktısı verdirme
+
+def den sonra pass dersek none yazar es geçer 
+veya sadece return yazarsak da none yazar
+---------------------------------
+lambda !!
+
+def dolar (TL):
+    return(TL/18)
+
+İLE
+
+dolar=lambda TL: TL/18
+
+AYNI ŞEYDİR
+
+print(dolar(100))
+
+dediğimizde  100doların kaç tl olduğunu verir
+
+daha düzgün yazarsak
+kullanıcıya sorup söylediği sayıya göre hesaplama için:
+
+dolar=lambda TL: TL/18
+TL=int(input("Türk lirası giriniz"))
+print(TL,"Türk lirası=",dolar(TL),"dolar")
+-------------------------------------------------------------------------------
+STRING İŞLEMLERİ (str)
+
+indis (index)
+
+isim="BTK AKADEMİ"
+isim[0]    ilk değer 0 dır
+'B'
+isim[3]     boşluk
+'' 
+isim[-1]    sondan başlıyor
+'İ'
+
+------------------------------
+string birleştirme
+
+a="BTK"
+b="AKADEMİ"
+c=a+b
+print (c)
+
+BTKAKADEMİ
+
+bos=' '
+c=a+bos+b
+print (c)
+
+BTK AKADEMİ
+
+c=a+'_'+b
+print(c) 
+BTK_AKADEMİ
+--------------------------------
+string bölme
+
+
+S="PYTHON"
+S[:]
+'PYTHON'
+S[3:]  3.indisten başlayıp dizi sonuna kadar yaz   
+'HON'
+S[:3]  İlk 3 karakteri kopar yaz
+'PYT'
+S[1:5]
+'YTHO'
+S[1::2]   1.indisten başlayıp 2şer atlayarak karakter alıyor
+'YHN'
+S[1:6:3] 1 de 6.elemana kadar 3 er 3er al 1.yi yazar Y sonra 3 adım sonraki O yu yazar
+'YO'
+S[::-1]  tersten yazar
+'NOHTYP'
+
+H yi T yap
+
+S='PYTHON'
+
+S2=S[:3]+'T'+S[4:]
+   print (S2)
+PYTTON
+-------------------------------
+replace
+
+adres='sultangazi-istanbul'
+adres2='kadıköy'
+Adres.replace("sultangazi","kadıköy")
+sultangaziyi kadıköy ile değiştiriyor
+ama print deyince yine eskisi gibi olur
+Adres=Adres.replace("sultangazi","kadıköy")
+yapman gerek
+print(Adres)
+deyince
+kadıköy-istanbul olur artık
+
+-------------------------------
+for d in 'btk'
+    print (d)
+b
+t
+k
+--------------------------------
+split
+bölmek ayırmak
+stringi ayrıştırıp listeye dönüştürme
+
+örn adres bilgisini tek bir metin şeklinden il ilçe ayrı ayrı listeler
+splitin default verisi boşluktur eğer () argüman girmezsek
+
+adres="EsentepeMah_2312Sokak_No23_Dairel_Sarıyer_İstanbul"
+adres.split('_')
+['EsentepeMah', '2312Sokak', 'No23', 'Dairel', 'Sarıyer', 'İstanbul']
+
+splite argüman olarak _ girilmiş yukarıdaki metin _ olan yerlerden ayrılacak
+
+
+metin="7985 5876 2554 2655 1547"
+metin.split()
+['7985', '15876', '2554', '2655', '1547']
+
+split defaultu boşluk
+--------------------------------
+len():
+karakter sayısı bulma
+
+cumle='abc'
+len(cumle)
+3
+
+count():
+istenen karakter sayısını bulma
+
+cumle.count('b')
+1
+--------------------------------
+string karşılaştırma 2 yol var
+
+'talat' =='talat'
+true
+
+'talat' is 'talat'
+true
+
+
+'a' != 'b' (eşit değil)
+true
+--------------------------------
+stringin içerisinde değişke yazdırma
+
+A='ile'
+String='Ali{ }Veli'
+String.format(A)
+
+çıktı
+AliileVeli
+--------------------------------
+str1='btk'
+
+ters çevirmek için 2 yol var
+
+str1[::-1]
+veya
+''.join(reversed(str1))
+
+çıktıları
+ktb dir
+
+'.'.join(reversed(str1))
+bu boşluğa . koyunca çıktıda aralara . konur
+k.t.b
+
+--------------------------------
+lower
+string harflerinin hepsini küçük yapma
+
+s='TalatÇETİN'
+S.lower()
+çıktı
+talatçetin
+
+s yazarsan
+yine TalatÇETİN
+ama
+s_k=s.lower() yeni tanımlama yaparsak
+s_k yazılınca
+talatçetin verilir
+
+
+upper
+hepsini büyük harfe dönüştürme
+
+s.upper()   #s değişebilir
+
+
+swapcase
+büyüğü küçük, küçüğü büyük yapma
+
+s.swapcase()
+
+capitalize
+sadece baş harf büyük gerisi küçük yapma
+
+s.capitalize()
+--------------------------------
+string içinde arama yapma
+'at' in 'talat'
+true
+----------------------------------------------------------------------------------
+DİZİLER VE LİSTELER
+
+Dizi(Array):aynı türden elemanların oluşturduğu sıralı objeler.
+
+liste=['ali',5 ,'a']
+liste farklı türler içerebilir
+-------------------------------
+Listenin indis numarasını öğrenme 
+
+Liste=[1,2,3, 'a', '2', 'ali']
+
+Liste.index (2)
+1
+2elemanı 1.indiste
+
+Liste.index('2')
+4
+karakter olan 2 elemanı 4.indiste
+
+parantez içine aranan elaman yazılır
+--------------------------------
+append
+liste.append(eleman)
+
+Listeye eleman ekleme
+
+L=[1,2,3,4,5,6]
+L.append (7)
+print (L)
+
+[1,2,3,4,5,6,7]
+
+karakter,kelime de eklenebilir
+-------------------------------
+insert
+liste.insert(indis,eleman)
+
+listenin sonuna değil ortaya eklemek istersek
+ 
+L.insert(2,9)
+2.indisin yerine 9 koy
+
+[1,2,9,3,4,5,6,7]
+--------------------------------
+len(liste)
+liste uzunluğu öğrenme
+
+L.count(1)
+belirli bir elemanın (1 olsun) sayısını bulma
+stringte
+L.count('ta') ''kullanıp aranır
+--------------------------------
+L3=L1+L2
+listeleri tek bir listede yazar
+
+extend
+birleştirmek de aynı işlemi yapar ama L1 üzerine eklenir
+L2 değişmedi ama L1 değişti ilk yöntemlde L3 oluşmuştu
+
+L1.extend(L2)
+print L1 dediğimizde li1 ve ş2 listeleri birleşir
+--------------------------------
+L[::-1]
+Ters çeviriyor ama 
+L
+dediğimizde yine normal içerik yazdırılıyor
+sadece ters çevirip bunu görmeye yarar
+
+liste.reverse()
+L.reverse()
+print(L)
+
+reverse de
+listeyi ters çevirir ve içerik artık ters olur
+--------------------------------
+Lisede en büyük ve en küçük değeri bulma
+
+min(Liste)
+
+max(Liste)
+--------------------------------
+stringi listeye dönüştürme
+
+kelime='btk'
+L=[]
+L=list(kelime)
+print(L)
+['b','t','k']
+
+listeden eleman silme
+
+tek seferde tek bir değer siliyor ilk gelen b yi siliyor sonraki b yi silmek için bir daha yazman gerek
+
+L.remove('B')     belirli elemanı silme
+
+liste içinde belirli indisi silme
+
+L.pop(2) indisi silme
+'K'
+
+L.clear(L)   listedeki elemanları tamamen siler
+çıktı
+[]
+--------------------------------
+ eleman in liste 
+listede değer var mı yok mu 
+true false
+--------------------------------
+liste elemanları sıralama
+
+Lİste.sort()
+
+küçükten büyüğe sıralama
+
+--------------------------------
+
+enumerate()
+
+liste elemanları numaralandırma
+
+Gun=['pazartesi', 'salı', 'carsamba', 'perşembe', 'cuma', 'cumartesi', 'pazar'] 
+
+for i, deger in enumerate (Gun): 
+    print(str (i+1) +deger)
+
+1pazartesi
+2salı
+3carsamba
+4perşembe
+5cuma
+6cumartesi
+7pazar
+--------------------------------
+
+YIĞIN(stack)
+
+eleman ekleme ve çıkarma işlemlerinin listenin en son elemanı üzerinden gerçekleştiği özel bir yapıdır.
+
+listeye son giren ilk çıkar
+
+last in-first out
+
+append append pop
+
+her eklediğin en sona eklenir
+
+L[]
+L.append(4)
+L.append(29)
+
+print(L)
+[4,29]
+
+L.pop()
+29
+
+print(L)
+[4]
+--------------------------------
+
+KUYRUK (queue)
+
+listeye son giren son çıkar
+last in last out
+
+L.append (214)
+L.pop(0)   0.indisi al diyoruz o da 4 ve 4 gider
+4
+
+pop içine değer yazıyoruz kuyrukta
+
+L
+[4,29,214]
+--------------------------------
+SÖZLÜKLER
+sözlük oluştururken {} kullanılır
+
+Mevsim={'kış':1 , 'ilkbahar':2}
+
+mevsimlerin sırasını sözlük oluşturduk
+
+TC=dict([ ('talat',1234) , ('ali' , 2345) ])
+
+dict ile talat  ve tcsi ali ve tcsi olarak sözlük oluşturduk
+
+sözlük=dict([    ]) 
+
+
+
+
+S={}         boş sözlük oluşturma
+S[1]='bir'   ile de sözlük doldurulur
+
+print(S)
+{'bir': 1}
+
+'bir' anahtar(key)
+ 1 değer (value)
+
+
+--------------------------------
+S.get()
+
+S.get('bir',"yok")
+1
+
+S.get('yedi',"yok")
+'yok'
+
+girdiğin anahtar kelimenin karşılığını gösterir ve karşılığı yoksa yok der
+--------------------------------
+S.pop('bir')
+1
+
+anahtar kelimesi bir olan kısmı sildi
+-------------------------------
+S.keys()
+
+dict_keys(['bir'])  sadece keyleri verir
+ 
+---------------------------
+S.values()   sadece değerleri verir
+
+dict_values([1])
+----------------------------
+S['bir']
+1
+
+anahtarını girdiğim sözcüğün değerini verir
+----------------------------
+S.items()
+dict_items([ ('bir',1) )]
+----------------------------
+Küme  (set)
+
+K={1, 325 , 'hg'}
+K
+{1, 325, 'hg'}
+
+
+K=set('abc')
+K
+{'a' , 'b' , 'c'}
+
+------------------------------
+k1 | k2 birleşim
+k2 & k2 kesişim
+k1 - k2 fark
+-------------------------------
+demet (tuple)
+
+normal parantez kullanılır
+ve listeden farkı değiştirilemez olmasıdır
+
+bir kere kaydedince içeriği değişmez en baştan tanımlamak gerekir
+
+
+listeye göre hafızada daha az yer kaplar eğer kodu değiştirmeyeceksen bunu kullanmak mantıklı
+---------------------------------------------------------------------------------------------
+ÖZET type
+
+a=3         #integer (int)
+b=3.14      #float
+c='abc'     #string (str)
+d=[1,2,3,'ali']  #liste (list)
+e={'bir':1,'iki': 2, 'üç':3, 'pazartesi':'haftanın 1. günü'}    #sözlük (dict)
+f={1,2,3,3,5,'a'}    #küme (set) 
+g=(1,2,3, 'a')       #demet (tuple)| I
+
+print (type (a), type (b), type (c), type (d), type (e), type (f), type (g))
+
+--------------------------------
+NESNE VE SINIF
+
+fonksiyonlar bir class ın altında yer aldıkları zaman ona metot deriz.
+
+class hayva(cins)
+      tur=cins
+      def metot(self):
+          self.cins="balıklar"
+
+self
+sınıf(class) içerisinde erişilecek elemanlar için kullanılır
+-------------------------------
+nesne object
+
+bir sınıftan birden fazla nesne türetilebilir
+
+class hayvan():
+      pass      boş sınıf olsun
+class araba():
+      pass
+
+at=hayvan()
+horoz=hayvan() # horoz hayvan sınıfından bir nesne. her iki nesnede hayvan sınıfında yer alan özellikleri taşımaktadır
+
+taksi=araba()
+kamyon=araba()
+--------------------------------
+nesne tanımlama
+nesneAdı=sınıfAdı()
+--------------------------------
+class Araba ():
+def __init__(self, model, marka, renk): #metot
+  self.model=model
+  self.marka-marka
+  self.renk=renk
+
+Taksi=Araba (2020, "FIAT", "YEŞİL") 
+print (Taksi.model)
+
+kabukta
+Taksi.model dediğimizde
+2020
+
+eğer modeli değşitirmek istersek
+Taksi.model=2022
+--------------------------------
+__init__(self,başlangıç değerleri)    #metot
+--------------------------------
+
+dir(taksi)
+nesnelerin özellikleri hakkında bilgi edinme imkanı sağlar.
+kullandığımız fonksiyonlar metotlar verilir
+--------------------------------
+
+Kalıtım (inheritance)
+
+üst sınıfa ait olan özelliklerin alt sınıflara miras olarak aktarılması özelliğidir.Böylece alt sınıf üst sınıfın özelliklerini taşır.
+
+class araba:     ÜST SINIF
+  def__init__(self,model,fiyat):
+     self.model=model
+     self.fiyat=fiyat
+
+class kamyon(araba):  ALT SINIF
+      pass
+
+k1=kamyon(2020,120000)
+
+print (k1.model)
+print (k1.fiyat)
+
+init return döndüremiyor printte tek tek model fiyat yazdırman gerek
+
+kamyon da araba sınıfının özelliklerini kullanıyor
+--------------------------------
+tarihi return etmek için
+önce pythona belirmen lazım import ile
+
+import datetime 
+.....
+return(datetime.datetime.now())
+
+--------------------------------
+modül fonksiyonlardan oluşur
+import math
+import random
+dahili modüldür herkes ulaşır pythonda kurulum dosyasında bulunur .
+sonradan bizim oluşturduklarımızda import edilebilir
+
+
+import Dikdortgenalani
+
+
+
+from Dikdortgenalani import cevre
+ sadece cevre gelir
+
+min hafıza alanı için önemli bi konu
+
+import math,random # aynı satırda import edilebilir
+
+
+
+import Dikdörtgenalani as dikd #kısa isimlendirme
+dikd.cevre(8,4)
+24 verir
+--------------------------------
+
+import math
+print(math.sqrt(100))  #karekök alma
+
+10.0
+
+sadece karekök almak için bütün math modülünü kullanıp hafızayı yormaya gerek yok 
+math modülünden bana sadece karekök alma fonksiyonunu getir diyelim
+
+from math import sqrt  !!
+print (sqrt(100)) 
+
+
+bir modülün tüm fonksiyonlarını kullanmak istiyorsan  * koyabilirsin
+
+from math import * 
+
+isim kısaltma
+import math as m
+print(m.sqrt(100))
+--------------------------------
+__name__ özelliği
+ana program olarak kullanıyorsak __name__=='__main__' e dönüşüyor
+true
+
+print('python')
+print('merhabadunya')
+print(__name__=='__main__')
+dediğimizde
+python
+merhabadunya
+true    ANA program
+
+başka bir program içinde merhaba dunyayı kullanmak için import etmeliyiz
+
+dosya açıp 
+import merhabadunya yazınca
+hata verir önce  ıdle dosya konumuda(kurulum doyasında)arar ve bulamaz o yüzden oraya taşı
+
+çalışır ama  false döner
+ana program değil çünkü
+import 
+
+--------------------------------
+
+abs()
+içine gelen sayının mutlak değerini alır
+
+round()
+içine yazılan sayıyı yuvarlar tam sayı yapar
+
+pow(2,3)
+2 nin 3.kuvveti
+
+max(1,2)
+2
+
+bin(54)
+binary sayı sistemine dönüştürür
+
+chr(65)
+ASCII ye çevirir
+
+hex(54)
+
+sum([1,2,3,4,5,6])
+21 
+içine yazılanları toplar
+
+sum({1,2,3})
+6
+
+D=1,6,98349
+type(D)
+< class 'tuple' >
+sum(D)
+454
+
+--------------------------------
+sqrt(9)
+hata verir tanımlamadınız der
+
+import math
+sqrt(9)
+yine hata verir
+
+kodun başına math. yazmalısın
+
+import math
+math.sqrt(9)
+3.0
+--------------------------------
+math.pi
+
+math.gcd(523,900)
+obebi verir
+------------------------------------------------------------------------------
+import turtle
+
+turtle.position()  #turtle.pos() da aynı
+
+(00.00 , 0.00)
+
+turtle.goto(100,100)  #gitmesini istediğin yer
+
+turtle.pos()
+(100.00 ,100.00) 
+
+turtle.setposition(-50,-50) # turtle.setpos (-50,-50) de aynı
+
+
+turtle.reset()
+başlangıç 0 0 a döner
+
+turtle.home() da başlangıçtaki gibi yapar
+
+--------------------------------
+
+turtle.setx(200)
+sadece x değişir
+
+turtle.sety(200)
+sadece y değişir
+
+--------------------------------
+
++x ekseni
+ileri gitme  geri gitme 
+
+import turtle
+turtle.forward(100)   # turtle.fd()
+turtle.backward(50)   # turtle.bk()
+
+turtle.right (90)  90 derece sağa dönme 
+kısayolu
+turtle.rt
+
+turtle.left(90)
+kısayolu
+turtle.lt
+----------
+onclick(f)
+onscreenclick(f)
+Fare (mouse) butonu tıklandığında "f" fonksiyonunu çağırır.
+
+onrelease(f)
+Fare (mouse) butonu bırakıldığında "f" fonksiyonunu çağırır.
+
+ondrag(f)
+Fare (mouse) sürüklemesi olduğunda "f" fonksiyonunu çağırır.
+
+listen()
+Tuş olaylarını yakalamak için turtle ekranını dinler
+
+
+onkey(f,tus)
+onkeyrelease(f,tus)
+ilgili klavye tuşu bırakıldığında f fonksiyonunu çağırır
+
+update()
+çizim ekranını günceller
+
+
+
+
+
+
+
